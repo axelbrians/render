@@ -45,3 +45,40 @@ Route::get('/userquestion', 'DetailThreadController@myquestion')
 // My Profile
 Route::get('/profile', 'myProfileController@myProfile')
 ->name('myprofile');
+
+
+// Change Password
+Route::get('/changepassword', 'ChangePasswordController@index')->name('changepassword');
+Route::post('/change_password', 'ChangePasswordController@store')->name('change.password');
+
+// route to submit reply to correspond question
+Route::post('/reply', 'InsertController@reply')
+    ->name('reply');
+
+//  view detail thread
+Route::get('/thread/{id}', 'DetailThreadController@thread')
+    ->name('thread');
+
+// edit user's question
+Route::get('/{id}/edit_thread','EditController@edit_thread')
+    ->name('edit_thread');
+
+// update user's question
+Route::put('/update_thread','EditController@update_thread')
+    ->name('update_thread');
+
+// delete user's question
+Route::get('/{id}/delete_thread','DeleteController@delete_thread') 
+    ->name('delete_thread');
+
+// edit user's reply
+Route::get('/{id}/{answer_id}/edit_reply','EditController@edit_reply')
+->name('edit_reply');
+
+// update user's reply
+Route::put('/update_reply','EditController@update_reply')
+->name('update_reply');
+
+// delete user's reply
+Route::get('/{id}/{answer_id}/delete_reply','DeleteController@delete_reply') 
+->name('delete_reply');
