@@ -36,6 +36,14 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .homepage-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 
     <!-- FAVICON -->
@@ -59,38 +67,36 @@
 </head>
 <body style="overflow: hidden;">
     <main>
-        <div class="container">
+        <div class="homepage-container">
             <div class="row justify-content-center">
                 <div class="col-md-12 text-center">
-                    <img src="{{ URL::to('/') }}/images/logo.png" alt="logo" style="width: 12rem;" class="mt-5 mb-1">
-                    <h1 style="font-size: 4rem;" class="mb-0">
+                    <img src="{{ URL::to('/') }}/images/logo.png" alt="logo" style="width: 10rem;" class="mt-5 mb-1">
+                    <h1 style="font-size: 3rem;" class="mb-0">
                         Welcome to {{config('app.name')}} 
                     </h1>
-                    <h1 style="font-size: 8rem;" class="mb-5">
+                    <h1 style="font-size: 5rem;" class="mb-2">
                         <strong>Commander!</strong>
                     </h1>
                     <hr>
                     <h1 class="mt-5 mb-1">
                         Join us to discuss anything!
                     </h1>
-                    <h3 class="mb-5">
+                    <h3 class="mb-4">
                         (yes, absolutely anything!)
                     </h3>
-                    <a href="{{ route('login') }}" class="btn btn-success btn-lg btn-homepage mr-3 mb-5">Login</a><a href="{{ route('register') }}" class="btn btn-primary btn-lg btn-homepage mb-5">Register</a>
+                    <a href="{{ route('login') }}" class="btn btn-success btn-lg btn-homepage mr-3 mb-1">Login</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary btn-lg btn-homepage mb-1">Register</a>
                 </div>
             </div>
         </div>
     </main>
     <script>
-        var currentTitle = 'Welcome to Readit!';
-        document.title = 'ReadIt | ' + currentTitle;
+        var currentTitle = 'Welcome to {{config('app.name')}}!';
+        document.title = '{{config('app.name')}} | ' + currentTitle;
     </script>
     <footer>
-        <div class="footer w-100">
-
-        </div>
         <div class="copyright w-100">
-            <center>&copy; 2020 ReadIt. Proudly made with love.</center>
+            <center>&copy; 2022 {{config('app.name')}}. Proudly made with love.</center>
         </div>
     </footer>
 </div>
